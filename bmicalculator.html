@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,38 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
-    <h1>BMI Calculator</h1>
-    <form action="/bmicalculator" method="post">
-        <input type="text" name="weight" placeholder="weight">
-        <input type="text" name="height" placeholder="height">
-        <button type="submit" name="submit">Calculate BMI</button>
-    </form>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <!-- <form action="/bmicalculator" method="post"> -->
+            <input id="weight" type="text" name="weight" placeholder="weight(kg)" autocomplete="off">
+            <input id="height" type="text" name="height" placeholder="height(meters)" autocomplete="off">
+            <button id="submit" type="submit" name="submit">Calculate BMI</button>
+            <label>=</label>
+            <label id="result">result</label><br><br>
+            <nav>
+                <a href="/index.html">Basic Calculator</a>
+                <a href="/bmicalculator.html">BMI Calculator</a>
+            </nav>
+            <!-- </form> -->
+    </div>
+
+    <script>
+        document.getElementById("submit").addEventListener("click", () => {
+            let a = document.getElementById("weight");
+            let b = document.getElementById("height");
+    
+            let weight = parseFloat(a.value);
+            let height = parseFloat(b.value);
+    
+            let bmi = (weight / Math.pow(height, 2)).toFixed(1);
+            console.log(bmi);
+
+            document.getElementById("result").innerHTML = bmi;
+        });
+
+    </script>
 </body>
+
 </html>
