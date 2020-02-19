@@ -5,13 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Calculator </h1>
-    <form action="/" method="post">
-        <input type="text" name="num1" placeholder="First Number">
-        <input type="text" name="num2" placeholder="Second Number">
-        <button type="submit" name="submit">Calculate</button>
-    </form>
+    <div class="container">
+        <h1 class="grid-item item1">Addition operator</h1>
+        <!-- <form  action="/" method="post"> -->
+            <input id="num1" class="grid-item item2" type="text" name="num1" placeholder="First Number">
+            <input id="num2" class="grid-item item3" type="text" name="num2" placeholder="Second Number">
+            <button id="submit" type="submit" name="submit">Calculate</button>
+            <label>=</label>
+            <label id="answer" name="answer">result</label>
+        <!-- </form> -->
+    </div>
+
+    <script>
+        document.getElementById("submit").addEventListener("click", () => {
+            let x = document.getElementById("num1");
+            let y = document.getElementById("num2");
+
+            let op1 = parseInt(x.value);
+            let op2 = parseInt(y.value);
+
+            let answer = op1+op2;
+            console.log(answer);
+
+            document.getElementById("answer").innerHTML = answer.toString();
+        });
+    </script>
 </body>
 </html> 

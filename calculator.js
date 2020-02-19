@@ -13,7 +13,6 @@ app.post('/', (req, res) => {
     let num1 = Number(req.body.num1);
     let num2 = Number(req.body.num2);
     let result = num1 + num2;
-
     res.send(`The result is ${result}<br><br><a href="/">Back to start</a>`);
 } );
 

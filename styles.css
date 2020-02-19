@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  background: #c6ffdd; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #f7797d,
+    #fbd786,
+    #c6ffdd
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #f7797d,
+    #fbd786,
+    #c6ffdd
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+}
+
+h1{
+    color: hsl(165deg, 60%, 70%)
+}
+
+.container{
+    width: 50%;
+    margin: 100px auto auto auto;
+    box-shadow: 4px 4px 5px gray;
+    border-radius: 30px;
+    padding: 15px;
+    background-color: #f7797d;
+    bottom: 50px;
+}
