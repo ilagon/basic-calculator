@@ -9,10 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="grid-item item1">Addition operator</h1>
+        <h1 class="grid-item item1">Simple Calculator</h1>
         <!-- <form  action="/" method="post"> -->
-            <input id="num1" class="grid-item item2" type="text" name="num1" placeholder="First Number">
-            <input id="num2" class="grid-item item3" type="text" name="num2" placeholder="Second Number">
+            <input id="num1" class="grid-item item2" type="text" name="num1" placeholder="First Number" autocomplete="off">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">x</option>
+                <option value="/">÷</option>
+            </select>
+            <input id="num2" class="grid-item item3" type="text" name="num2" placeholder="Second Number" autocomplete="off">
             <button id="submit" type="submit" name="submit">Calculate</button>
             <label>=</label>
             <label id="answer" name="answer">result</label>
@@ -23,14 +29,16 @@
         document.getElementById("submit").addEventListener("click", () => {
             let x = document.getElementById("num1");
             let y = document.getElementById("num2");
-
+            let z = document.getElementById("operator");
+            
             let op1 = parseInt(x.value);
             let op2 = parseInt(y.value);
-
-            let answer = op1+op2;
+            let operator = z.options[z.selectedIndex].value;
+            
+            let answer = eval(`${op1}${operator}${op2}`);
             console.log(answer);
 
-            document.getElementById("answer").innerHTML = answer.toString();
+            document.getElementById("answer").innerText = answer;
         });
     </script>
 </body>
